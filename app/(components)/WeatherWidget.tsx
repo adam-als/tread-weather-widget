@@ -14,12 +14,12 @@ export function WeatherWidget({ location }: { location: string }) {
     <Box
       component="section"
       sx={{
-        bgcolor: 'primary.main',
-        width: 'fit-content',
-        p: 6,
-        borderRadius: 4,
         display: 'grid',
         gap: 4,
+        width: 'fit-content',
+        borderRadius: 8,
+        p: 6,
+        bgcolor: 'background.paper',
       }}
     >
       <Suspense fallback={<WeatherDetailsSkeleton />}>

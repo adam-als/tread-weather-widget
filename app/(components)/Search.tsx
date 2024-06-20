@@ -1,13 +1,16 @@
 'use client';
 
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import { useDebouncedCallback } from 'use-debounce';
 
 export default function Search({ placeholder }: { placeholder: string }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  function handleSearch(term: string) {
+  const handleSearch = useDebouncedCallback((term: string) => {
     const params = new URLSearchParams(searchParams);
     if (term) {
       params.set('location', term);
@@ -16,18 +19,20 @@ export default function Search({ placeholder }: { placeholder: string }) {
     }
     replace(`${pathname}?${params.toString()}`);
     console.log(term);
-  }
+  }, 300);
 
   return (
-    <div>
-      <label htmlFor="search">Search</label>
-      <input
+    <Box>
+      <TextField
+        label="Search"
+        variant="outlined"
         placeholder={placeholder}
         onChange={(e) => {
           handleSearch(e.target.value);
         }}
         defaultValue={searchParams.get('location')?.toString()}
+        sx={{ bgcolor: 'common.white' }}
       />
-    </div>
+    </Box>
   );
 }
