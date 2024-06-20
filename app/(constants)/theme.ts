@@ -27,22 +27,10 @@ const theme = createTheme({
       black: '#232b2b',
     },
     background: {
-      default: '#f6d7b0',
-      paper: '#f6d7b0',
+      default: 'rgba(178,232,199,1)',
+      paper: 'rgba(178,232,199,1)',
     },
   },
-  /*palette: {
-    common: {
-      black: '#232b2b',
-    },
-    primary: {
-      main: '#232b2b',
-    },
-    background: {
-      default: '#f6d7b0',
-      paper: '#f6d7b0',
-    },
-  },*/
   components: {
     MuiLink: {
       defaultProps: {

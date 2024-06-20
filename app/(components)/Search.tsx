@@ -25,13 +25,18 @@ export default function Search({ placeholder }: { placeholder: string }) {
     <Box>
       <TextField
         label="Search"
-        variant="outlined"
+        variant="filled"
         placeholder={placeholder}
         onChange={(e) => {
           handleSearch(e.target.value);
         }}
         defaultValue={searchParams.get('location')?.toString()}
-        sx={{ bgcolor: 'common.white' }}
+        sx={{
+          bgcolor: 'common.white',
+          '& .MuiInputBase-root': {
+            bgcolor: 'common.white',
+          },
+        }}
       />
     </Box>
   );

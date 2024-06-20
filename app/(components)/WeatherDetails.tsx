@@ -47,9 +47,7 @@ export async function WeatherDetails({ location }: { location: string }) {
             height={30}
             alt="Conditions image"
           />
-          <Typography>
-            Condition: {locationData.current.condition.text}
-          </Typography>
+          <Typography>{locationData.current.condition.text}</Typography>
         </Box>
         <Typography>
           Wind: {locationData.current.wind_mph} mph,{' '}
