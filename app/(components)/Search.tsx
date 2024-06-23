@@ -10,15 +10,14 @@ export default function Search({ placeholder }: { placeholder: string }) {
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  const handleSearch = useDebouncedCallback((term: string) => {
+  const handleSearch = useDebouncedCallback((location: string) => {
     const params = new URLSearchParams(searchParams);
-    if (term) {
-      params.set('location', term);
+    if (location) {
+      params.set('location', location);
     } else {
       params.delete('location');
     }
     replace(`${pathname}?${params.toString()}`);
-    console.log(term);
   }, 300);
 
   return (

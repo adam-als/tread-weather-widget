@@ -1,6 +1,5 @@
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 import { Suspense } from 'react';
+import Box from '@mui/material/Box';
 import Skeleton from '@mui/material/Skeleton';
 import Search from './Search';
 import { WeatherDetails } from './WeatherDetails';
